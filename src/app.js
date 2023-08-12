@@ -7,7 +7,7 @@ import cors from 'cors';
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'http://techsidenews.vercel.app/',
   methods: 'GET, POST, PUT, DELETE',
   optionsSuccessStatus: 204,
 }));
