@@ -7,7 +7,7 @@ import cors from 'cors';
 const app = express();
 
 app.use(cors({
-  origin: 'techsidenews.vercel.app/',
+  origin: 'http://techsidenews.vercel.app/',
   methods: 'GET, POST, PUT, DELETE',
   optionsSuccessStatus: 204,
 }));
