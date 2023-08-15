@@ -33,8 +33,6 @@ export const login = async (req, res) => {
 
   try {
 
-    console.log("username")
-    
     const userFound = await User.findOne({ username });
 
     if(!userFound) return res.status(400).json({ message: "User not found" });
