@@ -33,13 +33,15 @@ export const login = async (req, res) => {
 
   try {
 
+    console.log("username")
+    
     const userFound = await User.findOne({ username });
 
     if(!userFound) return res.status(400).json({ message: "User not found" });
 
     const isMatch = await bcrypt.compare(password, userFound.password);
 
-    if(!isMatch) return res.status(401).json({ message: "Invalid credentials"})
+    if(!isMatch) return res.status(401).json({ message: "Invalid credentials"});
 
     const token =  await createAccessToken({ id: userFound._id });
     
@@ -48,8 +50,8 @@ export const login = async (req, res) => {
     res.json({
     message: token 
   });
-
-  } catch (error) {
+  
+} catch (error) {
     res.status(500).json({ message: error.message });
   }
 };

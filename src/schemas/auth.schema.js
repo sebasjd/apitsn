@@ -19,7 +19,7 @@ export const registerSchema = z.object({
 export const loginSchema = z.object({
   email: z.string({
     required_error: 'Username is required',
-  }).email({
+  }).username({
     message: 'Invalid email'
   }),
   password: z.string({
