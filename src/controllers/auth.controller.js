@@ -43,7 +43,6 @@ export const login = async (req, res) => {
 
     const token =  await createAccessToken({ id: userFound._id });
     
-    res.message(token)
     res.cookie( 'token', token )
     res.json({
       message: token 
