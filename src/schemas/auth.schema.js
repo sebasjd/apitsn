@@ -21,6 +21,6 @@ export const loginSchema = z.object({
     required_error: 'Username is required',
   }),
   password: z.string({
-    required_error: 'Username is required',
+    required_error: 'Password is required',
   })
 });
