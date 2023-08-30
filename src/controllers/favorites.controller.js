@@ -9,7 +9,7 @@ export const getFavorites = async (req, res) => {
 };
 
 export const addFavorite = async (req, res) => {
-  const { favNewId, img, title } = req.body;
+  const { img, title } = req.body;
 
   const newFavorite = new Favorite({
     favNewId: req.params.id,
